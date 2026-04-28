@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NB's Letters — A Chronicle of Displacement</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#0a0a0f;--surface:#12121a;--border:#1e1e2e;
+    --gold:#c9a84c;--gold-dim:#7a6030;
+    --red:#c0392b;--red-dim:#7a1f15;
+    --blue:#2980b9;--blue-dim:#1a4f73;
+    --green:#27ae60;--text:#e8e6df;--muted:#888;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,.08) 0%,transparent 70%)}
+  .hero-tag{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:.8}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1.1;margin-bottom:1rem}
+  .hero h1 span{color:var(--gold)}
+  .hero p{max-width:560px;color:var(--muted);font-size:1rem;margin-bottom:3rem}
+  .hero-stats{display:flex;gap:3rem;flex-wrap:wrap;justify-content:center}
+  .stat{text-align:center}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold)}
+  .stat-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .scroll-hint{position:absolute;bottom:2rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+  .scroll-hint::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+  /* TIMELINE */
+  .timeline-section{max-width:900px;margin:0 auto;padding:4rem 2rem}
+  .section-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);margin-bottom:.5rem}
+  .section-sub{color:var(--muted);font-size:.85rem;margin-bottom:3rem;letter-spacing:.05em}
+  .timeline{position:relative;padding-left:2rem}
+  .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold-dim),var(--red-dim),var(--blue-dim),transparent)}
+
+  .entry{position:relative;margin-bottom:2.5rem;padding-left:1.5rem}
+  .entry::before{content:'';position:absolute;left:-2.4rem;top:.45rem;width:10px;height:10px;border-radius:50%;border:2px solid var(--gold);background:var(--bg);transition:transform .3s}
+  .entry:hover::before{transform:scale(1.5);background:var(--gold)}
+  .entry-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem;flex-wrap:wrap}
+  .sl-badge{font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;background:rgba(201,168,76,.12);border:1px solid var(--gold-dim);color:var(--gold);padding:.2rem .55rem;border-radius:3px}
+  .date-badge{font-size:.7rem;color:var(--muted)}
+  .entry-title{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:.4rem;color:var(--text)}
+  .entry-body{font-size:.88rem;color:#aaa;line-height:1.75}
+  .entry-body strong{color:var(--text);font-weight:500}
+  .tag{display:inline-block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.15rem .45rem;border-radius:3px;margin-right:.3rem;margin-top:.4rem}
+  .tag-police{background:rgba(41,128,185,.15);border:1px solid var(--blue-dim);color:#5dade2}
+  .tag-samaj{background:rgba(39,174,96,.1);border:1px solid #1a5c35;color:#58d68d}
+  .tag-violence{background:rgba(192,57,43,.15);border:1px solid var(--red-dim);color:#e74c3c}
+  .tag-eviction{background:rgba(201,168,76,.12);border:1px solid var(--gold-dim);color:var(--gold)}
+  .tag-legal{background:rgba(155,89,182,.15);border:1px solid #5b2c6f;color:#bb8fce}
+
+  /* PATTERN GRID */
+  .pattern-section{padding:4rem 2rem;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .pattern-inner{max-width:900px;margin:0 auto}
+  .pattern-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2rem}
+  .pattern-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1.5rem;transition:border-color .3s,transform .3s}
+  .pattern-card:hover{border-color:var(--gold-dim);transform:translateY(-3px)}
+  .pattern-icon{font-size:2rem;margin-bottom:.75rem}
+  .pattern-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+  .pattern-value{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold)}
+  .pattern-desc{font-size:.8rem;color:var(--muted);margin-top:.3rem}
+
+  /* PHASE BAR */
+  .phase-section{max-width:900px;margin:0 auto;padding:4rem 2rem}
+  .phase-bar{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
+  .phase-row{display:flex;align-items:center;gap:1rem}
+  .phase-name{min-width:130px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .phase-track{flex:1;height:6px;background:#1a1a25;border-radius:3px;overflow:hidden}
+  .phase-fill{height:100%;border-radius:3px;transition:width 1s ease}
+  .phase-count{font-size:.75rem;color:var(--muted);min-width:30px;text-align:right}
+
+  /* FOOTER */
+  footer{text-align:center;padding:3rem 2rem;color:var(--muted);font-size:.75rem;letter-spacing:.1em;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-tag">Family Vendetta Archive · NB Bishwakarma</p>
+  <h1>20 Letters.<br/><span>One Family's War.</span></h1>
+  <p>A chronological record of displacement, violence, and the search for justice — written by NB from 2015 to 2023.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">20</div><div class="stat-label">Letters Written</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">Years of Conflict</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Authorities Petitioned</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Resolutions Delivered</div></div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="section-title">The Paper Trail</div>
+  <div class="section-sub">Each letter is a cry for help. Read them in order.</div>
+  <div class="timeline">
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 1</span><span class="date-badge">05-07-2015</span></div>
+      <div class="entry-title">First Plea — Letter to Party Leaders</div>
+      <div class="entry-body">NB writes to <strong>political party leaders</strong> requesting mediation through party authority over the growing land dispute with his brothers.</div>
+      <span class="tag tag-samaj">Mediation Request</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 2</span><span class="date-badge">23-11-2015</span></div>
+      <div class="entry-title">House Construction Attacked</div>
+      <div class="entry-body">NB started building a small kitchen on 2nd August. On 3rd August, <strong>Tilak and late Khadka Bdr destroyed foundation threads</strong> and threatened NB. Stone thrown at NB's home, damaging it. <strong>Drinking water was cut.</strong></div>
+      <span class="tag tag-violence">Physical Attack</span><span class="tag tag-eviction">Utilities Cut</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 3</span><span class="date-badge">17-11-2015</span></div>
+      <div class="entry-title">Electricity Cut — Complaint to Samaj</div>
+      <div class="entry-body"><strong>Tilak cut the electric wire</strong> to NB's home. NB writes to the Bishwakarma Samaj requesting mediation or a letter to take to the police station.</div>
+      <span class="tag tag-samaj">Samaj Complaint</span><span class="tag tag-eviction">Utilities Cut</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 4</span><span class="date-badge">02-12-2015</span></div>
+      <div class="entry-title">Chased From Home — Letter to Rangli Police</div>
+      <div class="entry-body"><strong>Tilak and Khadka Bdr attacked NB</strong> at home on 02-12-2015 calling him a "party hater" and chased him away. NB has been living in his <strong>in-laws' home</strong> since. Requests police investigation to return safely.</div>
+      <span class="tag tag-police">Police Petition</span><span class="tag tag-violence">Evicted</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 5</span><span class="date-badge">03-03-2016</span></div>
+      <div class="entry-title">Second Appeal to Samaj</div>
+      <div class="entry-body">NB explains he inherited the land, <strong>paid off his father Buddhiman's loan</strong>, and has the land registered in his name with taxes paid. Still living at in-laws. Pleads for Samaj to mediate a second time.</div>
+      <span class="tag tag-samaj">2nd Mediation Plea</span><span class="tag tag-eviction">Still Displaced</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 6</span><span class="date-badge">13-03-2016</span></div>
+      <div class="entry-title">Samaj Resolution — Tilak Refuses</div>
+      <div class="entry-body">Bishwakarma Samaj holds a formal meeting. They attempted mediation <strong>3 times</strong>. NB agreed to abide by his late brother Khadka Bdr's word. <strong>Tilak refused all mediation</strong>, insisting on police. Samaj formally declared they will no longer be responsible for this family's conflict.</div>
+      <span class="tag tag-samaj">Samaj Resolution</span><span class="tag tag-legal">Tilak Defiant</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 7</span><span class="date-badge">20-06-2016</span></div>
+      <div class="entry-title">Samaj Forwards Case to Police</div>
+      <div class="entry-body">Land has been <strong>divided on paper</strong> (patta). Samaj writes to Rangli Police Station: unable to resolve the dispute themselves, requesting police to take necessary action.</div>
+      <span class="tag tag-samaj">Samaj→Police</span><span class="tag tag-police">Referred</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 8</span><span class="date-badge">2016</span></div>
+      <div class="entry-title">Second Samaj Letter to Police (via Raju)</div>
+      <div class="entry-body">Written by Raju (a Tilak relative) to Rangli Police. Brothers still not living peacefully despite having divided the land paper equally. Requests police mediation.</div>
+      <span class="tag tag-samaj">Samaj→Police</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 9</span><span class="date-badge">30-09-2016</span></div>
+      <div class="entry-title">Requesting Permission to Return Home</div>
+      <div class="entry-body">On 2 Dec 2015 at 7pm, <strong>Tilak came with a heavy bat (stick)</strong> and chased NB away. NB has filed several complaints. No resolution yet. Tilak has <strong>cut the drinking water source</strong>. NB asks Rangli Police for an inquiry.</div>
+      <span class="tag tag-police">Police Petition</span><span class="tag tag-violence">Armed Threat</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 10</span><span class="date-badge">04-10-2016</span></div>
+      <div class="entry-title">FIR — Still Living in In-Laws' Home</div>
+      <div class="entry-body">NB writes formally: "It has been <strong>8 months since my brothers chased me away</strong>. I am still at my in-laws'. My two sons are working outstation. No resolution from anyone. I come to the police for help."</div>
+      <span class="tag tag-police">FIR</span><span class="tag tag-eviction">8 Months Displaced</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 11</span><span class="date-badge">After July 2016</span></div>
+      <div class="entry-title">Tilak Violates Samaj Terms</div>
+      <div class="entry-body">NB returned home as directed by Samaj (July). Tilak continues disrupting peace even after the directive. NB asks Samaj for a <strong>written resolution</strong> on how to live. Pledges to abide by whatever they decide.</div>
+      <span class="tag tag-samaj">Samaj Complaint</span><span class="tag tag-legal">Violation</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 12</span><span class="date-badge">04-07-2017</span></div>
+      <div class="entry-title">Frontyard Stones Thrown Away</div>
+      <div class="entry-body">NB placed small stones (for construction) in his own frontyard. <strong>Ritesh and Tilak came at midday and threw them all away.</strong> NB reports this pattern to Samaj and asks them to intervene.</div>
+      <span class="tag tag-samaj">Samaj Complaint</span><span class="tag tag-violence">Property Attack</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 13</span><span class="date-badge">Feb 25 (Sunday)</span></div>
+      <div class="entry-title">Death Ceremony Disrupted</div>
+      <div class="entry-body">During a sacred death ritual, <strong>Tilak, his wife Meena Kumari, and Ritesh called the Pandit and verbally abused NB's father</strong> — calling him a "Bhutia's slave" and "leftover eater", and gave the Pandit ₹150 to chase him away. NB writes to Samaj.</div>
+      <span class="tag tag-violence">Religious Disruption</span><span class="tag tag-samaj">Samaj Complaint</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 14</span><span class="date-badge">Undated</span></div>
+      <div class="entry-title">Nightly Stone Throwing on Roof</div>
+      <div class="entry-body"><strong>Every night, someone throws stones on NB's roof.</strong> NB cannot prove the perpetrator. He requests investigation and help.</div>
+      <span class="tag tag-violence">Harassment</span><span class="tag tag-police">Police Request</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 15</span><span class="date-badge">26-09-2021</span></div>
+      <div class="entry-title">Roshan's Attack on Arati</div>
+      <div class="entry-body">At ~7pm someone threw stones. NB went out. <strong>Roshan Bishwakarma (shirtless) entered and attempted to assault Arati</strong> — they both fell. NB writes to Rangli Police requesting investigation.</div>
+      <span class="tag tag-police">Police FIR</span><span class="tag tag-violence">Physical Assault</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 16</span><span class="date-badge">12-11-2022</span></div>
+      <div class="entry-title">Slingshot Attack While Cutting Trees</div>
+      <div class="entry-body">While NB was cutting trees on his <strong>own land</strong>, he was <strong>hit in the chest with a stone fired by a slingshot.</strong> Police received and stamped the complaint on 14-11-2022.</div>
+      <span class="tag tag-police">Police (Stamped)</span><span class="tag tag-violence">Physical Injury</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 17</span><span class="date-badge">18-09-2022</span></div>
+      <div class="entry-title">Tilak Planning to Occupy Land</div>
+      <div class="entry-body">NB writes to Samaj about hearsay: <strong>Tilak is planning to forcibly occupy NB's land.</strong> References the failed 2016 reconciliation attempt. Warns Samaj pre-emptively.</div>
+      <span class="tag tag-samaj">Samaj Warning</span><span class="tag tag-eviction">Land Threat</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 18</span><span class="date-badge">Nov 2022</span></div>
+      <div class="entry-title">Samaj No-Show — Urgent Action Demanded</div>
+      <div class="entry-body">NB submitted a letter to Samaj on 18-09-2022. A meeting was called for 17 Nov 2022 at 5pm. <strong>No one from Samaj showed up until 6pm.</strong> NB expresses deep disappointment and demands action.</div>
+      <span class="tag tag-samaj">Samaj Abandoned</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 19</span><span class="date-badge">Feb 2023</span></div>
+      <div class="entry-title">Upesh's Letter — Harassment at Crossroads</div>
+      <div class="entry-body">Written by <strong>Upesh</strong> to the police. Tilak continuously harasses NB at every meeting point — any crossroads, any encounter. Pattern of intimidation documented.</div>
+      <span class="tag tag-police">Police Complaint</span><span class="tag tag-violence">Harassment</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta"><span class="sl-badge">SL 20</span><span class="date-badge">31-07-2023</span></div>
+      <div class="entry-title">Section 107 CrPC — Court Intervenes</div>
+      <div class="entry-body"><strong>Section 107 CrPC issued for BOTH Tilak and NB.</strong> The matter finally goes to court. But Tilak continued abusing NB after the order. Police said they couldn't act without larger evidence. In 2025, <strong>Tilak attempted to hit NB with a Bamphok</strong> — 6th Mile Police attended, a witness was present. Tilak fled and never appeared at the village police meeting. Minor incidents — spitting, sarcasm — continue to this day.</div>
+      <span class="tag tag-legal">Section 107 CrPC</span><span class="tag tag-police">Court Order</span><span class="tag tag-violence">Ongoing</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PATTERN CARDS -->
+<section class="pattern-section">
+  <div class="pattern-inner">
+    <div class="section-title">Patterns of Persecution</div>
+    <div class="section-sub">What the letters reveal about the nature of the conflict</div>
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <div class="pattern-icon">⚡</div>
+        <div class="pattern-label">Utility Attacks</div>
+        <div class="pattern-value">2×</div>
+        <div class="pattern-desc">Electricity wire cut + drinking water cut — a deliberate strategy of attrition</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-icon">🏠</div>
+        <div class="pattern-label">Forced Displacement</div>
+        <div class="pattern-value">8 mo.</div>
+        <div class="pattern-desc">NB lived in his in-laws' home, unable to return to his own property</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-icon">📄</div>
+        <div class="pattern-label">Letters to Samaj</div>
+        <div class="pattern-value">11</div>
+        <div class="pattern-desc">Repeated pleas — Samaj eventually washed their hands of the matter</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-icon">🚔</div>
+        <div class="pattern-label">Police Complaints</div>
+        <div class="pattern-value">8+</div>
+        <div class="pattern-desc">Multiple FIRs filed — all met with inaction or bureaucratic dead ends</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-icon">🪨</div>
+        <div class="pattern-label">Stone Incidents</div>
+        <div class="pattern-value">4×</div>
+        <div class="pattern-desc">Stones thrown at home, on roof (nightly), at Roshan's attack, and via slingshot</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-icon">⚖️</div>
+        <div class="pattern-label">Legal Escalation</div>
+        <div class="pattern-value">2023</div>
+        <div class="pattern-desc">After 8 years, Section 107 CrPC — yet intimidation continued beyond it</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE BAR CHART -->
+<section class="phase-section">
+  <div class="section-title">Activity by Phase</div>
+  <div class="section-sub">Number of letters / incidents per time period</div>
+  <div class="phase-bar">
+    <div class="phase-row">
+      <div class="phase-name">2015 (Start)</div>
+      <div class="phase-track"><div class="phase-fill" style="width:75%;background:linear-gradient(to right,#c9a84c,#e67e22)"></div></div>
+      <div class="phase-count">4</div>
+    </div>
+    <div class="phase-row">
+      <div class="phase-name">2016</div>
+      <div class="phase-track"><div class="phase-fill" style="width:100%;background:linear-gradient(to right,#e74c3c,#c0392b)"></div></div>
+      <div class="phase-count">6</div>
+    </div>
+    <div class="phase-row">
+      <div class="phase-name">2017</div>
+      <div class="phase-track"><div class="phase-fill" style="width:33%;background:linear-gradient(to right,#8e44ad,#6c3483)"></div></div>
+      <div class="phase-count">2</div>
+    </div>
+    <div class="phase-row">
+      <div class="phase-name">2018–2020</div>
+      <div class="phase-track"><div class="phase-fill" style="width:17%;background:#333"></div></div>
+      <div class="phase-count">~0</div>
+    </div>
+    <div class="phase-row">
+      <div class="phase-name">2021–2022</div>
+      <div class="phase-track"><div class="phase-fill" style="width:67%;background:linear-gradient(to right,#2980b9,#1a5276)"></div></div>
+      <div class="phase-count">4</div>
+    </div>
+    <div class="phase-row">
+      <div class="phase-name">2023+</div>
+      <div class="phase-track"><div class="phase-fill" style="width:33%;background:linear-gradient(to right,#27ae60,#1e8449)"></div></div>
+      <div class="phase-count">2</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  NB Bishwakarma · Family Vendetta Archive · Document compiled from handwritten letters 2015–2023
+</footer>
+
+</body>
+</html>

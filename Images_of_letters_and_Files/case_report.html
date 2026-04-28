@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NB Case Evidence Report</title>
+  <meta name="description" content="Offline evidence site organizing the NB Bishwakarma property-dispute record in dated order with supporting letters and multilingual viewing.">
+  <link rel="stylesheet" href="case_report.css">
+</head>
+<body>
+  <div class="report-shell">
+    <header class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-topbar">
+          <p class="eyebrow" id="hero-eyebrow"></p>
+          <div class="language-switch no-print" aria-label="Language switch">
+            <button type="button" class="lang-button" data-lang="en">English</button>
+            <button type="button" class="lang-button" data-lang="ne">नेपाली</button>
+            <button type="button" class="lang-button" data-lang="hi">हिन्दी</button>
+          </div>
+        </div>
+        <h1 id="hero-title"></h1>
+        <p class="hero-copy" id="hero-copy"></p>
+        <p class="hero-note" id="hero-note"></p>
+        <div class="stat-grid" aria-label="Case statistics">
+          <div class="stat-card">
+            <span class="stat-value" id="stat-records-value"></span>
+            <span class="stat-label" id="stat-records-label"></span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="stat-dated-value"></span>
+            <span class="stat-label" id="stat-dated-label"></span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="stat-institutions-value"></span>
+            <span class="stat-label" id="stat-institutions-label"></span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="stat-span-value"></span>
+            <span class="stat-label" id="stat-span-label"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="section-nav no-print" aria-label="Section navigation">
+      <ul>
+        <li><a href="#background" id="nav-background"></a></li>
+        <li><a href="#mediation-wall" id="nav-mediation"></a></li>
+        <li><a href="#timeline" id="nav-timeline"></a></li>
+        <li><a href="#support-records" id="nav-support"></a></li>
+        <li><a href="#village-facts" id="nav-village"></a></li>
+        <li><a href="#patterns" id="nav-patterns"></a></li>
+        <li><a href="#interpretation" id="nav-interpretation"></a></li>
+        <li><a href="#verbal-abuse" id="nav-verbal"></a></li>
+        <li><a href="#incidents" id="nav-incidents"></a></li>
+        <li><a href="#asks" id="nav-asks"></a></li>
+      </ul>
+    </nav>
+
+    <noscript>
+      <p class="no-script">
+        This report uses local JavaScript to organize the dated timeline, supporting records, and language switch. Open it in a normal browser with JavaScript enabled.
+      </p>
+    </noscript>
+
+    <main>
+      <section class="section section-paper" id="background">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="background-eyebrow"></p>
+            <h2 id="background-title"></h2>
+          </div>
+          <div class="background-grid">
+            <div class="background-card">
+              <p id="background-copy-1"></p>
+              <p id="background-copy-2"></p>
+            </div>
+            <div class="background-card background-note">
+              <p id="background-note"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="mediation-wall">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="wall-eyebrow"></p>
+            <h2 id="wall-title"></h2>
+            <p id="wall-intro"></p>
+          </div>
+          <div class="mediation-grid">
+            <div class="wall-card">
+              <ol class="wall-steps" id="mediation-steps"></ol>
+            </div>
+            <aside class="wall-card wall-callout">
+              <p class="callout-label" id="wall-callout-label"></p>
+              <h3 id="wall-callout-title"></h3>
+              <p id="wall-callout-copy"></p>
+              <div class="wall-quote">
+                <p id="wall-callout-quote"></p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-paper" id="timeline">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="timeline-eyebrow"></p>
+            <h2 id="timeline-title"></h2>
+            <p id="timeline-intro"></p>
+          </div>
+          <div class="timeline-toolbar chronology-strip">
+            <div>
+              <p class="chronology-label" id="timeline-coverage-label"></p>
+              <p class="filter-status" id="timeline-coverage-copy"></p>
+            </div>
+          </div>
+          <div class="timeline-toolbar">
+            <div class="filter-group" aria-label="Timeline filters">
+              <button type="button" class="filter-button" data-filter="all" aria-pressed="true" id="filter-all"></button>
+              <button type="button" class="filter-button" data-filter="violence" aria-pressed="false" id="filter-violence"></button>
+              <button type="button" class="filter-button" data-filter="samaj" aria-pressed="false" id="filter-samaj"></button>
+              <button type="button" class="filter-button" data-filter="police" aria-pressed="false" id="filter-police"></button>
+              <button type="button" class="filter-button" data-filter="legal" aria-pressed="false" id="filter-legal"></button>
+              <button type="button" class="filter-button" data-filter="civic" aria-pressed="false" id="filter-civic"></button>
+            </div>
+            <p class="filter-status" id="filter-status"></p>
+          </div>
+          <div class="timeline" id="timeline-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="support-records">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="support-eyebrow"></p>
+            <h2 id="support-title"></h2>
+            <p id="support-intro"></p>
+          </div>
+          <div class="support-stack" id="support-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-paper" id="village-facts">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="village-eyebrow"></p>
+            <h2 id="village-title"></h2>
+            <p id="village-intro"></p>
+          </div>
+          <div class="tier-legend-wrap">
+            <p class="tier-legend-title" id="tier-legend-title"></p>
+            <div class="tier-legend" id="tier-legend"></div>
+          </div>
+          <div class="fact-group-stack" id="village-facts-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-paper" id="patterns">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="patterns-eyebrow"></p>
+            <h2 id="patterns-title"></h2>
+            <p id="patterns-intro"></p>
+          </div>
+          <div class="pattern-stack" id="pattern-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="interpretation">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="interpretation-eyebrow"></p>
+            <h2 id="interpretation-title"></h2>
+            <p id="interpretation-intro"></p>
+          </div>
+          <div class="interpretation-stack" id="interpretation-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="verbal-abuse">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="verbal-eyebrow"></p>
+            <h2 id="verbal-title"></h2>
+          </div>
+          <div class="quote-strip">
+            <p id="verbal-intro"></p>
+            <div class="quote-list" id="quote-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-paper" id="incidents">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow-light" id="incidents-eyebrow"></p>
+            <h2 id="incidents-title"></h2>
+          </div>
+          <div class="incidents-panel">
+            <p id="incidents-intro"></p>
+            <ol class="incidents-list" id="incidents-list"></ol>
+            <p class="incidents-note" id="incidents-note"></p>
+            <p class="closing-line" id="incidents-closing"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="asks">
+        <div class="section-wrap">
+          <div class="asks-panel">
+            <p class="eyebrow-light" id="asks-eyebrow"></p>
+            <h2 id="asks-title"></h2>
+            <p id="asks-intro"></p>
+            <ol class="asks-list" id="asks-list"></ol>
+            <p class="closing-line" id="asks-closing"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p id="footer-copy"></p>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+    <div class="lightbox-panel">
+      <button type="button" class="lightbox-close" id="lightbox-close"></button>
+      <div class="lightbox-image-wrap">
+        <img id="lightbox-image" alt="">
+      </div>
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="case_report.js"></script>
+</body>
+</html>

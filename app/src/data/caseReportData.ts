@@ -1,0 +1,606 @@
+import { ReactNode } from "react";
+
+export type Language = "en" | "ne" | "hi";
+
+export interface RecordItem {
+  id: string;
+  no: number;
+  sortDate: string;
+  dateLabel: string;
+  metaLabel: string;
+  meta: Record<Language, string>;
+  primary: string;
+  types: string[];
+  tags: string[];
+  title: Record<Language, string>;
+  summary: Record<Language, string>;
+  images: { src: string }[];
+}
+
+export const copyData = {
+  en: {
+    title: "Family Vendetta: Archive Evidence",
+    hero: {
+      eyebrow: "Pattern shown by letters, Samaj records, police complaints, and civic petitions",
+      title: "Tilak's refusal to divide the property kept provoking NB into repeated conflict.",
+      copy: "This offline report organizes records from 2015 to 2025 in clean date order, separating undated supporting letters so the pattern can be read without confusion. The evidence traces a multi-year timeline of conflict.",
+      note: "Property title is still disputed. This report focuses on what is shown in written records: refusal to settle, repeated threats, failed mediation, and recurring institutional outreach by NB.",
+    },
+    stats: {
+      recordsValue: "31",
+      recordsLabel: "Records in file",
+      datedValue: "21",
+      datedLabel: "Dated records",
+      institutionsValue: "5",
+      institutionsLabel: "Channels used",
+      spanValue: "2015-2025",
+      spanLabel: "Time span",
+    },
+    nav: {
+      background: "Background",
+      mediation: "Mediation Wall",
+      timeline: "Chronology",
+      support: "Undated support",
+      patterns: "Pattern analysis",
+      verbal: "Verbal abuse",
+      incidents: "Physical incidents",
+      asks: "NB's requests",
+    },
+    background: {
+      eyebrow: "Context",
+      title: "A Living Arrangement that Never Settled",
+      copy1: "Nar Bahadur Bishwakarma (NB) and Tilak Bishwakarma are brothers. According to NB, Tilak had earlier agreed to move to a designated place so the ancestral home could be settled, but that understanding never became a lasting division on the ground. Instead, Tilak continued to occupy the ancestral home.",
+      copy2: "Once that understanding broke down, the conflict escalated from family arguments into written complaints. NB repeatedly approached party leaders, Bishwakarma Samaj, police, court-linked proceedings (Section 107 CrPC), and the Gram Panchayat.",
+      note: "While NB acknowledges a stick incident during a death ceremony that went to court, the wider paper trail overwhelmingly shows NB repeatedly choosing written escalation and third-party intervention, while facing intimidation.",
+    },
+    wall: {
+      eyebrow: "Systematic Failure",
+      title: "Every formal path to peace was blocked.",
+      intro: "This traces the failure of formal peace routes. NB repeatedly sought mediation, but the process kept breaking due to Tilak's refusal.",
+      steps: [
+        { title: "NB asked outsiders to intervene.", body: "The file begins with a written appeal for mediation rather than retaliation." },
+        { title: "Bishwakarma Samaj held repeated sessions.", body: "Multiple letters show NB returning to the Samaj." },
+        { title: "NB accepted community direction.", body: "The Samaj decision records that NB agreed to abide by their direction." },
+        { title: "Tilak refused to settle.", body: "The same decision notes Tilak remained adamant and pushed the matter away." },
+        { title: "Samaj stepped back.", body: "Later letters show Samaj forwarding the conflict to police." },
+        { title: "Civic & Legal paths failed.", body: "The record continues into police complaints, CrPC papers, and a 2025 Gram Panchayat petition." },
+      ],
+    },
+    asks: {
+      eyebrow: "Demands",
+      title: "What NB is Asking For",
+      items: [
+        "Tilak should build at the designated place and leave the present house position as it is.",
+        "Tilak should stop antagonizing NB.",
+        "Tilak should stop dehumanizing and threatening NB.",
+        "Tilak should stop physically abusing NB."
+      ],
+      closing: "The paper trail is clear. Action is overdue."
+    },
+    patterns: {
+        groups: [
+            {
+                label: "Pattern 1",
+                title: "Refusal to divide and refusal to settle",
+                body1: "Multiple letters, the Samaj decision, and the 1986 confirmation letter point to the same claim: there was a designated arrangement, and Tilak kept refusing to settle into it.",
+            },
+            {
+                label: "Pattern 2",
+                title: "Displacement, water, electricity, and everyday pressure",
+                body1: "The conflict repeatedly reaches into habitability: who can stay home, who can build, disturbed water sources, and cut electricity.",
+            },
+            {
+                label: "Pattern 3",
+                title: "NB keeps building a paper trail",
+                body1: "Across years and institutions, NB repeatedly writes instead of going silent. The accumulation of letters is evidence of repeated good-faith outreach.",
+            },
+            {
+                label: "Pattern 4",
+                title: "Threats escalate from words to injury",
+                body1: "Later records involve physical confrontation, slingshot injuries, next-generation involvement, and Section 107 CrPC papers for both parties.",
+            }
+        ]
+    },
+    incidents: {
+      items: [
+        "2015 construction conflict: foundation lines were allegedly destroyed, threats were made, and stones were reportedly thrown.",
+        "02-12-2015: NB says he was attacked and chased from home, forcing him to stay with in-laws.",
+        "04-07-2017: NB says building stones placed in the front-yard area were thrown away.",
+        "26-09-2021: NB's complaint says Roshan moved into the confrontation after stone throwing and tried to assault Aarati.",
+        "12-11-2022: A police-stamped complaint says NB was hit in the chest with a slingshot stone while cutting trees.",
+        "2025: NB says Tilak tried to hit him with a Bamphok in a public area, police came, a witness existed, and Tilak fled.",
+        "April 2026: While NB was fixing a water pipe, Tilak threw a stone first, NB returned and threw a stone back, hitting Tilak's daughter accidentally."
+      ]
+    },
+    verbal: [
+      "I will slap you.",
+      "I will hit you.",
+      "I will hit you with the stick.",
+      "You're a slave of Bhutia.",
+      "You're a leftover eater of Bhutia.",
+      "You don't have brains.",
+      "There is a black mad dog roaming around, and I will hit him.",
+      "I have people coming to take you to jail."
+    ]
+  }
+};
+
+export const recordsData: RecordItem[] = [
+  {
+    id: "r1",
+    no: 1,
+    sortDate: "2015-07-05",
+    dateLabel: "05-07-2015",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to party leaders",
+      ne: "नर बहादुर बिश्वकर्माद्वारा पार्टी नेताहरूलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा पार्टी नेताओं को",
+    },
+    primary: "samaj",
+    types: ["samaj"],
+    tags: ["samaj", "mediation"],
+    title: {
+      en: "First written request for outside mediation",
+      ne: "बाह्य मध्यस्थताको पहिलो लिखित निवेदन",
+      hi: "बाहरी मध्यस्थता की पहली लिखित मांग",
+    },
+    summary: {
+      en: "NB asks party leaders to intervene before the land dispute worsens. The written record begins with process, not retaliation.",
+      ne: "जग्गाको विवाद बढ्नुअघि NB ले पार्टी नेताहरूलाई हस्तक्षेप गर्न आग्रह गर्छन्। लिखित अभिलेख प्रतिशोधबाट होइन, प्रक्रियाबाट सुरु हुन्छ।",
+      hi: "भूमि विवाद बढ़ने से पहले NB पार्टी नेताओं से हस्तक्षेप मांगता है। लिखित रिकॉर्ड प्रतिशोध से नहीं, प्रक्रिया से शुरू होता है।",
+    },
+    images: [{ src: "/images/05-07-2015-GJMM-House.jpg" }],
+  },
+  {
+    id: "r2",
+    no: 2,
+    sortDate: "2015-11-23",
+    dateLabel: "23-11-2015",
+    metaLabel: "source",
+    meta: {
+      en: "Complaint about house-building conflict",
+      ne: "घर बनाउने क्रममा भएको विवादसम्बन्धी उजुरी",
+      hi: "घर बनाने के दौरान हुए विवाद की शिकायत",
+    },
+    primary: "violence",
+    types: ["violence", "police"],
+    tags: ["violence", "police", "utilities", "stamped"],
+    title: {
+      en: "Construction conflict turns into threat and water-cut allegations",
+      ne: "निर्माणको विवाद धम्की र पानी काटिएको आरोपसम्म पुग्छ",
+      hi: "निर्माण विवाद धमकी और पानी काटने के आरोप तक पहुंचता है",
+    },
+    summary: {
+      en: "The complaint says foundation lines were destroyed, threats were made, stones were thrown, and drinking water was cut while NB was trying to build.",
+      ne: "NB ले निर्माण गर्न खोज्दा नापेको धागो भत्काइयो, धम्की दिइयो, ढुंगा फालियो र पिउने पानी काटियो भन्ने उजुरीमा उल्लेख छ।",
+      hi: "शिकायत में कहा गया है कि NB के निर्माण प्रयास के दौरान नाप की लाइनें बिगाड़ी गईं, धमकी दी गई, पत्थर फेंके गए और पीने का पानी काटा गया।",
+    },
+    images: [{ src: "/images/Conflict_while_making_house_stamped_23-11-2015.jpg" }],
+  },
+  {
+    id: "r3",
+    no: 3,
+    sortDate: "2015-11-17",
+    dateLabel: "17-11-2015",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Bishwakarma Samaj",
+      ne: "नर बहादुर बिश्वकर्माद्वारा बिश्वकर्मा समाजलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा बिश्वकर्मा समाज को",
+    },
+    primary: "samaj",
+    types: ["samaj", "violence"],
+    tags: ["samaj", "utilities"],
+    title: {
+      en: "Electricity cut complaint sent to the Samaj",
+      ne: "बिजुली काटिएको भन्दै समाजलाई दिइएको उजुरी",
+      hi: "बिजली काटे जाने की शिकायत समाज को भेजी गई",
+    },
+    summary: {
+      en: "NB says Tilak cut the electricity wire and asks the Samaj either to mediate or to support a police approach.",
+      ne: "NB का अनुसार टिलकले बिजुलीको तार काटे, त्यसपछि उनले समाजसँग या त मध्यस्थता या प्रहरीकहाँ जान सहयोग मागे।",
+      hi: "NB के अनुसार तिलक ने बिजली की तार काटी, जिसके बाद उसने समाज से या तो मध्यस्थता या पुलिस तक जाने में सहयोग मांगा।",
+    },
+    images: [{ src: "/images/Tilak_cutting_electiricity_17-11-2015.jpg" }],
+  },
+  {
+    id: "r4",
+    no: 4,
+    sortDate: "2015-12-02",
+    dateLabel: "02-12-2015",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Rangeli Police",
+      ne: "नर बहादुर बिश्वकर्माद्वारा रंगेली प्रहरीलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा रंगेली पुलिस को",
+    },
+    primary: "police",
+    types: ["police", "violence"],
+    tags: ["police", "displacement", "violence"],
+    title: {
+      en: "NB says he was chased from home",
+      ne: "NB ले आफूलाई घरबाट धपाइएको भन्छन्",
+      hi: "NB कहता है कि उसे घर से भगा दिया गया",
+    },
+    summary: {
+      en: "The police letter says Tilak and late Khadka Bahadur attacked NB, abused him, and forced him to stay at his in-laws' home.",
+      ne: "प्रहरी पत्रमा टिलक र दिवंगत खड्का बहादुरले NB माथि आक्रमण गरी गाली गरेर उनलाई ससुराली बस्न बाध्य पारेको उल्लेख छ।",
+      hi: "पुलिस पत्र में कहा गया है कि तिलक और दिवंगत खड्का बहादुर ने NB पर हमला किया, गाली दी और उसे ससुराल में रहने पर मजबूर किया।",
+    },
+    images: [{ src: "/images/Letter_to_Police_asking_for_help_togoto_ownHome.jpg" }],
+  },
+  {
+    id: "r5",
+    no: 5,
+    sortDate: "2016-03-03",
+    dateLabel: "03-03-2016",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Bishwakarma Samaj",
+      ne: "नर बहादुर बिश्वकर्माद्वारा बिश्वकर्मा समाजलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा बिश्वकर्मा समाज को",
+    },
+    primary: "samaj",
+    types: ["samaj"],
+    tags: ["samaj", "mediation"],
+    title: {
+      en: "Second request for mediation",
+      ne: "मध्यस्थताका लागि दोस्रो निवेदन",
+      hi: "मध्यस्थता के लिए दूसरा निवेदन",
+    },
+    summary: {
+      en: "NB reminds Samaj about paying family land loans and again pleads for mediation as he is still displaced.",
+      ne: "NB ले परिवारको ऋण तिरेको कुरा सम्झाउँदै आफू विस्थापित भइरहेकोले मध्यस्थताका लागि अनुरोध गर्छन्।",
+      hi: "NB परिवार का ऋण चुकाने की बात याद दिलाते हुए मध्यस्थता का अनुरोध करता है क्योंकि वह अभी भी विस्थापित है।",
+    },
+    images: [{ src: "/images/Requesting_mediation_with_samaj_2nd_time_03-03-2016.jpg" }],
+  },
+  {
+    id: "r6",
+    no: 6,
+    sortDate: "2016-03-13",
+    dateLabel: "13-03-2016",
+    metaLabel: "source",
+    meta: {
+      en: "Bishwakarma Samaj Resolution",
+      ne: "बिश्वकर्मा समाजको निर्णय",
+      hi: "बिश्वकर्मा समाज का निर्णय",
+    },
+    primary: "samaj",
+    types: ["samaj"],
+    tags: ["samaj", "stamped"],
+    title: {
+      en: "Samaj steps back due to Tilak's refusal",
+      ne: "टिलकको अस्वीकारले समाज पछि हट्छ",
+      hi: "तिलक के इंकार से समाज पीछे हटता है",
+    },
+    summary: {
+      en: "Samaj declares that NB agreed to their directives but Tilak refused. The Samaj decides it can no longer mediate.",
+      ne: "समाजले घोषणा गर्छ कि NB ले निर्देशन माने तर टिलकले मानेनन्। त्यसैले समाजले अब मध्यस्थता गर्न नसक्ने बताउँछ।",
+      hi: "समाज घोषणा करता है कि NB ने निर्देश माने लेकिन तिलक ने नहीं। समाज तय करता है कि वह अब मध्यस्थता नहीं कर सकता।",
+    },
+    images: [{ src: "/images/SamajS_decision_13-03-2016.jpg" }],
+  },
+  {
+    id: "r7",
+    no: 7,
+    sortDate: "2016-06-20",
+    dateLabel: "20-06-2016",
+    metaLabel: "source",
+    meta: {
+      en: "Samaj forwards case to Police",
+      ne: "समाजले प्रहरीलाई केस पठाउँछ",
+      hi: "समाज पुलिस को केस भेजता है",
+    },
+    primary: "police",
+    types: ["samaj", "police"],
+    tags: ["samaj", "police"],
+    title: {
+      en: "Samaj formally hands over to police",
+      ne: "समाजले औपचारिक रूपमा प्रहरीलाई जिम्मा दिन्छ",
+      hi: "समाज औपचारिक रूप से पुलिस को सौंपता है",
+    },
+    summary: {
+      en: "Samaj informs Rangeli police that despite dividing the land on paper, they cannot resolve the physical conflict and request police intervention.",
+      ne: "कागजमा जग्गा बाँडिए पनि भौतिक विवाद समाधान गर्न नसकेको भन्दै समाजले रंगेली प्रहरीलाई हस्तक्षेप गर्न आग्रह गर्छ।",
+      hi: "कागज पर जमीन बांटने के बावजूद भौतिक विवाद हल न कर पाने पर समाज रंगेली पुलिस से हस्तक्षेप करने का अनुरोध करता है।",
+    },
+    images: [{ src: "/images/Letter_from_samaj_to_Police_20-06-2016.jpg" }],
+  },
+  {
+    id: "r8",
+    no: 8,
+    sortDate: "2017-07-04",
+    dateLabel: "04-07-2017",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Samaj",
+      ne: "नर बहादुर बिश्वकर्माद्वारा समाजलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा समाज को",
+    },
+    primary: "violence",
+    types: ["samaj", "violence"],
+    tags: ["samaj", "violence"],
+    title: {
+      en: "Stones placed for building thrown away",
+      ne: "घर बनाउन राखिएका ढुंगाहरू फालियो",
+      hi: "घर बनाने के लिए रखे गए पत्थर फेंके गए",
+    },
+    summary: {
+      en: "NB reports to Samaj that Ritesh and Tilak threw away building stones placed in his front-yard.",
+      ne: "NB ले समाजलाई जानकारी दिन्छन् कि रितेश र टिलकले उनको आँगनमा घर बनाउन राखेका ढुंगाहरू फाले।",
+      hi: "NB समाज को सूचित करता है कि रितेश और तिलक ने उसके आंगन में घर बनाने के लिए रखे गए पत्थर फेंक दिए।",
+    },
+    images: [{ src: "/images/lettertosamajretaliationinfrontyard04-07-2017_.jpg" }],
+  },
+  {
+    id: "r9",
+    no: 9,
+    sortDate: "2021-09-26",
+    dateLabel: "26-09-2021",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Police",
+      ne: "नर बहादुर बिश्वकर्माद्वारा प्रहरीलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा पुलिस को",
+    },
+    primary: "police",
+    types: ["police", "violence"],
+    tags: ["police", "violence", "injury"],
+    title: {
+      en: "Stone throwing and physical assault attempt",
+      ne: "ढुंगा हान्ने र आक्रमणको प्रयास",
+      hi: "पत्थरबाजी और हमले का प्रयास",
+    },
+    summary: {
+      en: "NB complains that after stones were thrown at his house, Roshan tried to assault Aarati, leading to both falling down.",
+      ne: "NB ले उजुरी गर्छन् कि घरमा ढुंगा हानेपछि रोशनले आरतीलाई आक्रमण गर्न खोज्दा दुवै लडे।",
+      hi: "NB की शिकायत है कि घर पर पत्थर फेंकने के बाद रोशन ने आरती पर हमला करने की कोशिश की जिससे दोनों गिर गए।",
+    },
+    images: [{ src: "/images/RoshansCase.jpg" }],
+  },
+  {
+    id: "r10",
+    no: 10,
+    sortDate: "2022-11-12",
+    dateLabel: "14-11-2022 (stamped)",
+    metaLabel: "source",
+    meta: {
+      en: "Police stamped complaint",
+      ne: "प्रहरी-छाप भएको उजुरी",
+      hi: "पुलिस मुहरयुक्त शिकायत",
+    },
+    primary: "police",
+    types: ["police", "violence"],
+    tags: ["police", "violence", "injury", "stamped"],
+    title: {
+      en: "Slingshot injury during tree cutting",
+      ne: "रूख काट्दा गुलेलीबाट चोट",
+      hi: "पेड़ काटते समय गुलेल से चोट",
+    },
+    summary: {
+      en: "A formally received complaint states NB was hit in the chest with a stone from a slingshot by Tilak.",
+      ne: "औपचारिक रूपमा दर्ता भएको उजुरीले भन्छ कि टिलकले गुलेलीबाट हानेको ढुंगा NB को छातीमा लाग्यो।",
+      hi: "औपचारिक रूप से दर्ज शिकायत कहती है कि तिलक की गुलेल का पत्थर NB की छाती पर लगा।",
+    },
+    images: [{ src: "/images/Tree_incident_Police_received_stamped_14-11-2022.jpeg" }],
+  },
+  {
+    id: "r11",
+    no: 11,
+    sortDate: "2023-01-28",
+    dateLabel: "28-01-2023",
+    metaLabel: "source",
+    meta: {
+      en: "Samaj letter to Police",
+      ne: "समाजको पत्र प्रहरीलाई",
+      hi: "समाज का पत्र पुलिस को",
+    },
+    primary: "samaj",
+    types: ["samaj", "police"],
+    tags: ["samaj", "police"],
+    title: {
+      en: "Samaj fails again and asks Police to intervene",
+      ne: "समाज फेरि असफल भयो र प्रहरीलाई हस्तक्षेप गर्न आग्रह",
+      hi: "समाज फिर से विफल हुआ और पुलिस से हस्तक्षेप करने का अनुरोध",
+    },
+    summary: {
+      en: "The letter states that Samaj tried to mediate on 28 Jan 2023 but failed, asking the police to intervene.",
+      ne: "पत्रमा उल्लेख छ कि समाजले मध्यस्थता गर्न खोज्यो तर असफल भयो, त्यसैले प्रहरीलाई हस्तक्षेप गर्न आग्रह गरिएको छ।",
+      hi: "पत्र में कहा गया है कि समाज ने मध्यस्थता करने की कोशिश की लेकिन विफल रहा, इसलिए पुलिस से हस्तक्षेप करने का अनुरोध है।",
+    },
+    images: [{ src: "/images/28-01-2023_Samaj_letter_to_Police.jpeg" }],
+  },
+  {
+    id: "r12",
+    no: 12,
+    sortDate: "2023-07-31",
+    dateLabel: "31-07-2023",
+    metaLabel: "source",
+    meta: {
+      en: "Section 107 CrPC notices",
+      ne: "धारा १०७ CrPC सूचनाहरू",
+      hi: "धारा १०७ CrPC नोटिस",
+    },
+    primary: "legal",
+    types: ["legal"],
+    tags: ["legal", "court"],
+    title: {
+      en: "Court intervention: Section 107 CrPC",
+      ne: "अदालतको हस्तक्षेप: धारा १०७ CrPC",
+      hi: "अदालत का हस्तक्षेप: धारा १०७ CrPC",
+    },
+    summary: {
+      en: "Section 107 CrPC notices were issued to both parties by the court, escalating the matter formally into the legal system.",
+      ne: "अदालतले दुवै पक्षलाई धारा १०७ CrPC सूचना जारी गर्‍यो, जसले यो मुद्दालाई औपचारिक रूपमा कानुनी प्रणालीमा पुर्‍यायो।",
+      hi: "अदालत ने दोनों पक्षों को धारा १०७ CrPC नोटिस जारी किए, जिससे मामला औपचारिक रूप से कानूनी प्रणाली में चला गया।",
+    },
+    images: [
+      { src: "/images/sec107CrPC-31-07-2023.jpeg" },
+      { src: "/images/sec107CrPC2-31.07.2023.jpeg" }
+    ],
+  },
+  {
+    id: "r13",
+    no: 13,
+    sortDate: "2024-07-09",
+    dateLabel: "09-07-2024",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Samaj",
+      ne: "नर बहादुर बिश्वकर्माद्वारा समाजलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा समाज को",
+    },
+    primary: "samaj",
+    types: ["samaj", "violence"],
+    tags: ["samaj", "harassment", "utilities", "signatures"],
+    title: {
+      en: "Water source contamination and threats",
+      ne: "पानीको स्रोत दूषित गर्ने र धम्की",
+      hi: "पानी के स्रोत को दूषित करना और धमकियां",
+    },
+    summary: {
+      en: "NB claims Tilak urinated in the water source and threw pipes. The letter includes 18 community signatures.",
+      ne: "NB को दाबी छ कि टिलकले पानीमा पिसाब फेरे र पाइपहरू फाले। पत्रमा १८ जना समुदायका सदस्यहरूको हस्ताक्षर छ।",
+      hi: "NB का दावा है कि तिलक ने पानी में पेशाब किया और पाइप फेंक दिए। पत्र में १८ समुदाय के सदस्यों के हस्ताक्षर हैं।",
+    },
+    images: [
+      { src: "/images/09-07-2024_pissing_in_water_and_threatening.jpeg" },
+      { src: "/images/09-07-2024_pissing_in_water_and_threateningSignatures.jpeg" }
+    ],
+  },
+  {
+    id: "r14",
+    no: 14,
+    sortDate: "2025-04-23",
+    dateLabel: "23-04-2025",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Gram Panchayat",
+      ne: "नर बहादुर बिश्वकर्माद्वारा ग्राम पञ्चायतलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा ग्राम पंचायत को",
+    },
+    primary: "civic",
+    types: ["civic"],
+    tags: ["civic", "utilities"],
+    title: {
+      en: "Gram Panchayat petition over utilities",
+      ne: "सुविधाहरूका लागि ग्राम पञ्चायतमा निवेदन",
+      hi: "सुविधाओं के लिए ग्राम पंचायत में अर्जी",
+    },
+    summary: {
+      en: "NB appeals to the Gram Panchayat after Tilak allegedly disconnected electricity and water on March 27.",
+      ne: "टिलकले मार्च २७ मा बिजुली र पानी काटेपछि NB ले ग्राम पञ्चायतमा अपिल गर्छन्।",
+      hi: "तिलक द्वारा २७ मार्च को बिजली और पानी काटे जाने के बाद NB ग्राम पंचायत से अपील करता है।",
+    },
+    images: [{ src: "/images/23-04-2025_electricity_and_water_cut.jpeg" }],
+  },
+  {
+    id: "r15",
+    no: 15,
+    sortDate: "2025-10-29",
+    dateLabel: "29-10-2025",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Samaj",
+      ne: "नर बहादुर बिश्वकर्माद्वारा समाजलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा समाज को",
+    },
+    primary: "samaj",
+    types: ["samaj"],
+    tags: ["samaj", "resolution"],
+    title: {
+      en: "Demand for a written resolution",
+      ne: "लिखित निर्णयको माग",
+      hi: "लिखित निर्णय की मांग",
+    },
+    summary: {
+      en: "NB demands a written resolution from the Samaj about previous meetings or to be formally ejected from the process.",
+      ne: "NB ले अघिल्ला बैठकहरूबारे समाजबाट लिखित निर्णय माग्छन् वा आफूलाई प्रक्रियाबाट औपचारिक रूपमा निकाल्न भन्छन्।",
+      hi: "NB पिछली बैठकों के बारे में समाज से लिखित निर्णय मांगता है या खुद को प्रक्रिया से औपचारिक रूप से बाहर करने के लिए कहता है।",
+    },
+    images: [{ src: "/images/29-10-2025_letter_asking_for_the_resolutionOfSamaj.jpeg" }],
+  }
+];
+
+export const undatedRecords: RecordItem[] = [
+  {
+    id: "u1",
+    no: 16,
+    sortDate: "0000",
+    dateLabel: "Undated",
+    metaLabel: "source",
+    meta: {
+      en: "Letter from 1986 meeting",
+      ne: "१९८६ को बैठकको पत्र",
+      hi: "१९८६ की बैठक का पत्र",
+    },
+    primary: "history",
+    types: ["history"],
+    tags: ["history"],
+    title: {
+      en: "Confirmation of 1986 arrangement",
+      ne: "१९८६ को व्यवस्थाको पुष्टि",
+      hi: "१९८६ की व्यवस्था की पुष्टि",
+    },
+    summary: {
+      en: "Signed by Balaram Chettri and Ganga Bahadur, stating that in 1986 Tilak had agreed to move to the designated place.",
+      ne: "बलराम छेत्री र गंगा बहादुरद्वारा हस्ताक्षरित, जहाँ टिलकले १९८६ मा तोकिएको ठाउँमा सर्न सहमति जनाएका थिए।",
+      hi: "बलराम छेत्री और गंगा बहादुर द्वारा हस्ताक्षरित, जिसमें बताया गया है कि १९८६ में तिलक ने तय जगह पर जाने की सहमति दी थी।",
+    },
+    images: [{ src: "/images/letter_confirmation_of_1986_meeting.jpeg" }],
+  },
+  {
+    id: "u2",
+    no: 17,
+    sortDate: "0000",
+    dateLabel: "Undated",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Samaj",
+      ne: "नर बहादुर बिश्वकर्माद्वारा समाजलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा समाज को",
+    },
+    primary: "history",
+    types: ["samaj", "history"],
+    tags: ["samaj", "history", "resolution"],
+    title: {
+      en: "History of land loans and broken agreements",
+      ne: "जग्गाको ऋण र टुटेको सम्झौताको इतिहास",
+      hi: "भूमि ऋण और टूटे हुए समझौतों का इतिहास",
+    },
+    summary: {
+      en: "NB explains how he paid off the grandfather's land loan and recounts Tilak's refusal to honor the past agreement.",
+      ne: "NB ले कसरी हजुरबुबाको जग्गाको ऋण तिरेको बताएका छन् र टिलकले पुरानो सम्झौता पालना नगरेको वर्णन गरेका छन्।",
+      hi: "NB बताता है कि कैसे उसने दादा के भूमि ऋण का भुगतान किया और तिलक द्वारा पिछले समझौते को न मानने का वर्णन करता है।",
+    },
+    images: [{ src: "/images/Letter_with_no_date_to_samaj.jpeg" }],
+  },
+  {
+    id: "u3",
+    no: 18,
+    sortDate: "0000",
+    dateLabel: "Undated",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Ward Representative",
+      ne: "नर बहादुर बिश्वकर्माद्वारा वडा प्रतिनिधिलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा वार्ड प्रतिनिधि को",
+    },
+    primary: "civic",
+    types: ["civic", "violence"],
+    tags: ["civic", "harassment"],
+    title: {
+      en: "Ward representative petition",
+      ne: "वडा प्रतिनिधिमा निवेदन",
+      hi: "वार्ड प्रतिनिधि को अर्जी",
+    },
+    summary: {
+      en: "NB reports to the Ward Rep that Tilak and Ritesh have been threatening him, including a threat to 'throw you from the roof'.",
+      ne: "NB ले वडा प्रतिनिधिलाई जानकारी दिन्छन् कि टिलक र रितेशले उनलाई 'छानाबाट फालिदिन्छु' भनेर धम्की दिइरहेका छन्।",
+      hi: "NB वार्ड प्रतिनिधि को सूचित करता है कि तिलक और रितेश उसे 'छत से फेंक देने' की धमकी दे रहे हैं।",
+    },
+    images: [{ src: "/images/No_date_letter.jpeg" }],
+  }
+];
