@@ -7,6 +7,7 @@ import { Timeline } from "@/components/Timeline";
 import { MediationWall } from "@/components/MediationWall";
 import { UndatedRecords } from "@/components/UndatedRecords";
 import { Incidents } from "@/components/Incidents";
+import { PatternOfProvocation } from "@/components/PatternOfProvocation";
 import { useRef } from "react";
 import { FileText, ShieldAlert, Users, Scale, ExternalLink } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
@@ -105,6 +106,7 @@ export default function Home() {
       </section>
 
       <MediationWall data={t.wall} lang={lang} />
+      <PatternOfProvocation lang={lang} />
       <Timeline lang={lang} />
       <UndatedRecords lang={lang} />
       <Incidents lang={lang} />
