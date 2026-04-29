@@ -8,7 +8,7 @@ import { MediationWall } from "@/components/MediationWall";
 import { UndatedRecords } from "@/components/UndatedRecords";
 import { Incidents } from "@/components/Incidents";
 import { useRef } from "react";
-import { FileText, ShieldAlert, Users, Scale } from "lucide-react";
+import { FileText, ShieldAlert, Users, Scale, ExternalLink } from "lucide-react";
 import { useLang } from "@/context/LanguageContext";
 
 function getCopy(lang: string) {
@@ -134,6 +134,35 @@ export default function Home() {
           <div className="mt-16 py-8 border-y border-neutral-900">
             <p className="text-2xl font-medium text-gradient">{t.asks.closing}</p>
           </div>
+        </div>
+      </section>
+
+      {/* Full Report CTA */}
+      <section className="py-16 px-6 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <motion.a
+            href="/case_report.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.01 }}
+            className="flex items-center justify-between gap-6 p-8 rounded-2xl border border-[#d4af37]/30 bg-gradient-to-r from-[#1a1505] to-[#0a0a0a] hover:border-[#d4af37]/60 transition-all group cursor-pointer"
+          >
+            <div>
+              <p className="text-xs text-[#d4af37] uppercase tracking-widest font-bold mb-2">Complete Archive</p>
+              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#d4af37] transition-colors">
+                Open Full Detailed Report
+              </h3>
+              <p className="text-neutral-400 text-sm leading-relaxed max-w-lg">
+                Filterable timeline by category · Village observations · Pattern analysis · Letter image lightbox · Printable layout
+              </p>
+            </div>
+            <div className="shrink-0 w-14 h-14 rounded-full bg-[#d4af37]/10 border border-[#d4af37]/30 flex items-center justify-center group-hover:bg-[#d4af37]/20 transition-colors">
+              <ExternalLink className="w-6 h-6 text-[#d4af37]" />
+            </div>
+          </motion.a>
         </div>
       </section>
     </main>
