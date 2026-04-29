@@ -2049,7 +2049,7 @@ function renderFigure(record, image, imageIndex) {
   const caption = `R${record.no}. ${title}`;
   return `
     <figure class="evidence-card">
-      <img class="evidence-thumb" src="${escapeAttribute(image.src)}" alt="${escapeAttribute(caption)}" loading="lazy">
+      <img class="evidence-thumb" src="images/${escapeAttribute(image.src)}" alt="${escapeAttribute(caption)}" loading="lazy">
       <figcaption>${escapeHtml(caption)}</figcaption>
     </figure>
   `;
