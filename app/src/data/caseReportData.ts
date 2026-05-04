@@ -27,9 +27,9 @@ export const copyData = {
       note: "Property title is still disputed. This report focuses on what is shown in written records: refusal to settle, repeated threats, failed mediation, and recurring institutional outreach by NB.",
     },
     stats: {
-      recordsValue: "31",
+      recordsValue: "34",
       recordsLabel: "Records in file",
-      datedValue: "21",
+      datedValue: "22",
       datedLabel: "Dated records",
       institutionsValue: "5",
       institutionsLabel: "Channels used",
@@ -108,6 +108,7 @@ export const copyData = {
         "04-07-2017: NB says building stones placed in the front-yard area were thrown away.",
         "26-09-2021: NB's complaint says Roshan moved into the confrontation after stone throwing and tried to assault Aarati.",
         "12-11-2022: A police-stamped complaint says NB was hit in the chest with a slingshot stone while cutting trees.",
+        "22-09-2023: At 5pm while NB was carrying work materials, Tilak pushed him, tried to hurt him, and spat on him — documented in a letter to Samaj, Panchayat and Police.",
         "2025: NB says Tilak tried to hit him with a Bamphok in a public area, police came, a witness existed, and Tilak fled.",
         "April 2026: While NB was fixing a water pipe, Tilak threw a stone first, NB returned and threw a stone back, hitting Tilak's daughter accidentally."
       ]
@@ -521,6 +522,35 @@ export const recordsData: RecordItem[] = [
       hi: "NB पिछली बैठकों के बारे में समाज से लिखित निर्णय मांगता है या खुद को प्रक्रिया से औपचारिक रूप से बाहर करने के लिए कहता है।",
     },
     images: [{ src: "/images/29-10-2025_letter_asking_for_the_resolutionOfSamaj.jpeg" }],
+  },
+  {
+    id: "r16",
+    no: 16,
+    sortDate: "2023-09-27",
+    dateLabel: "27-09-2023",
+    metaLabel: "source",
+    meta: {
+      en: "Letter copy from Bishwakarma Samaj — tri-addressed to Samaj, Gram Panchayat, and Police",
+      ne: "बिश्वकर्मा समाजबाट प्राप्त पत्रको प्रतिलिपि — समाज, ग्राम पञ्चायत र प्रहरी तिनैलाई",
+      hi: "बिश्वकर्मा समाज से मिली पत्र की प्रति — समाज, ग्राम पंचायत और पुलिस तीनों को",
+    },
+    primary: "violence",
+    types: ["violence", "samaj", "police", "civic"],
+    tags: ["violence", "samaj", "police", "civic", "harassment"],
+    title: {
+      en: "Tilak spat on NB and pushed him while he was carrying work materials",
+      ne: "काम गर्दै गर्दा NB लाई टिलकले थुक्ने र धकेल्ने",
+      hi: "काम के दौरान NB पर तिलक ने थूका और धक्का दिया",
+    },
+    summary: {
+      en: "On 22-09-2023 at 5pm, while NB was working and carrying something, Tilak pushed him, tried to hurt him, and spat on him. NB states this has been happening for a very long time. The letter — a copy obtained from the Samaj — is jointly addressed to the Bishwakarma Samaj, the Gram Panchayat, and the Police Station, appealing for resolution of the ongoing pattern of harassment.",
+      ne: "22-09-2023 को साँझ 5 बजे NB केही बोक्दै काम गर्दै थिए। त्यसबेला टिलकले उनलाई धकेले, हानी गर्ने कोशिस गरे र थुकिदिए। NB भन्छन् यो धेरै लामो समयदेखि भइरहेको छ। समाजबाट प्रतिलिपिका रूपमा प्राप्त यो पत्र निरन्तर उत्पीडनको समाधानका लागि समाज, ग्राम पञ्चायत र प्रहरी तिनैसमक्ष अपिल गर्दछ।",
+      hi: "22-09-2023 को शाम 5 बजे NB काम करते हुए कुछ उठा रहे थे। उस समय तिलक ने उन्हें धक्का दिया, चोट पहुंचाने की कोशिश की और उन पर थूक दिया। NB का कहना है कि यह बहुत लंबे समय से हो रहा है। समाज से प्रति के रूप में प्राप्त यह पत्र निरंतर उत्पीड़न के समाधान के लिए समाज, ग्राम पंचायत और पुलिस तीनों से अपील करता है।",
+    },
+    images: [
+      { src: "/images/27_09_2023_tilak_assualted_when_NB_was_Carrying_while_working.jpg" },
+      { src: "/images/27_09_2023_tilak_assualted_when_NB_was_Carrying_while_working2ndpage.jpg" },
+    ],
   }
 ];
 
@@ -602,5 +632,57 @@ export const undatedRecords: RecordItem[] = [
       hi: "NB वार्ड प्रतिनिधि को सूचित करता है कि तिलक और रितेश उसे 'छत से फेंक देने' की धमकी दे रहे हैं।",
     },
     images: [{ src: "/images/No_date_letter.jpeg" }],
+  },
+  {
+    id: "u4",
+    no: 19,
+    sortDate: "0000",
+    dateLabel: "Undated (2016 or later)",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Bishwakarma to Bishwakarma Samaj, Lamahatta Village",
+      ne: "नर बहादुर बिश्वकर्माद्वारा बिश्वकर्मा समाज, लामाहट्टा गाउँलाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा बिश्वकर्मा समाज, लामाहट्टा गांव को",
+    },
+    primary: "samaj",
+    types: ["samaj"],
+    tags: ["samaj", "resolution", "harassment"],
+    title: {
+      en: "NB responds to Samaj over unpaid dues — cites Samaj's silence during 2016 Andolan",
+      ne: "NB ले बाँकी बक्यौताबारे समाजलाई जवाफ दिँदै 2016 आन्दोलनमा मौनता र झुटा आरोपहरूको उल्लेख गर्छन्",
+      hi: "NB समाज को बकाया के बारे में जवाब देते हुए 2016 आंदोलन में मौन और झूठे आरोपों का उल्लेख करता है",
+    },
+    summary: {
+      en: "NB writes that as a Founder Member of the Samaj he paid dues for years, but the Samaj stayed silent when brothers made false accusations, when he was labelled 'anti-party' and 'flag thief' during the 2016 Andolan, and when stones were thrown at his roof with only him and his wife at home. Being told 'go tell your own party' eroded his faith. He asks for a deep discussion and requests the Samaj not mix itself with political party affairs.",
+      ne: "NB लेख्छन् कि उनी समाजका संस्थापक सदस्य थिए र वर्षौंदेखि नियमित बक्यौता तिर्थे, तर आफ्नै दाजुभाइले झुटा आरोप लगाउँदा, 2016 आन्दोलनमा उनलाई 'बिरोधी' र 'झण्डा चोर' भनिँदा, र उनी र उनकी श्रीमती मात्रै घरमा हुँदा छानामा ढुंगा फालिँदा समाज मौन रह्यो। 'आफ्नो पार्टीलाई गएर भन' भन्ने जवाफले समाजप्रतिको उनको विश्वास घट्यो। उनले गहिरो छलफल र समाजलाई राजनीतिक पार्टीसँग नमिसाउन आग्रह गर्छन्।",
+      hi: "NB लिखता है कि वह समाज के संस्थापक सदस्य थे और सालों तक नियमित बकाया देते रहे, लेकिन झूठे आरोप, 2016 आंदोलन में 'विरोधी'/'झंडा चोर' लेबल, और छत पर पत्थर फेंकने पर समाज चुप रहा। 'अपनी पार्टी को जाकर बताओ' ने उनकी आस्था तोड़ी। वे गहरी चर्चा और समाज को राजनीतिक दल से अलग रखने की अपील करते हैं।",
+    },
+    images: [{ src: "/images/no_dates_letters_to_samaj_which_seems_to_have_been_compromised.jpg" }],
+  },
+  {
+    id: "u5",
+    no: 20,
+    sortDate: "0000",
+    dateLabel: "18-01-20xx (year unclear)",
+    metaLabel: "writer",
+    meta: {
+      en: "Nar Bahadur Vishwakarma to Vishwakarma Society, Lamahatta Ward No. 16",
+      ne: "नर बहादुर बिश्वकर्माद्वारा बिश्वकर्मा समाज, लामाहट्टा वडा नं. 16 लाई",
+      hi: "नर बहादुर बिश्वकर्मा द्वारा बिश्वकर्मा समाज, लामाहट्टा वार्ड नं. 16 को",
+    },
+    primary: "samaj",
+    types: ["samaj", "legal"],
+    tags: ["samaj", "resolution", "legal"],
+    title: {
+      en: "Tilak repeatedly refused Samaj direction — no justice delivered",
+      ne: "टिलकले बारम्बार समाजको निर्देशन मान्न अस्वीकार गरे — कुनै न्याय भएन",
+      hi: "तिलक ने बार-बार समाज के निर्देश को मानने से इनकार किया — कोई न्याय नहीं मिला",
+    },
+    summary: {
+      en: "NB, identifying himself as son of the late Buddhiman Vishwakarma and a senior Samaj member, writes that the land and tree dispute with elder brother Tilak has continued for many years. Although NB repeatedly sought Samaj help, Tilak directly violated and ignored the Samaj's directions. After multiple attempts, the Samaj neither expelled Tilak for non-compliance nor expelled NB — no justice was delivered whatsoever.",
+      ne: "NB आफूलाई दिवंगत बुद्धिमान बिश्वकर्माका छोरा र समाजका वरिष्ठ सदस्यका रूपमा चिनाउँछन्। उनले भन्छन् कि जेठा दाजु टिलकसँगको जमिन र रूखको विवाद वर्षौंदेखि जारी छ। उनले बारम्बार समाजसँग मद्दत माग्दा पनि टिलकले समाजको निर्देशन सिधै उल्लघंन गरे। धेरै प्रयासपछि पनि समाजले न टिलकलाई निष्कासित गर्यो, न NB लाई — कुनै न्याय भएन।",
+      hi: "NB खुद को दिवंगत बुद्धिमान बिश्वकर्मा के बेटे और समाज के वरिष्ठ सदस्य के रूप में परिचित कराते हैं। उनका कहना है कि बड़े भाई तिलक के साथ जमीन और पेड़ का विवाद कई सालों से जारी है। बार-बार समाज से मदद मांगने पर भी तिलक ने समाज के निर्देशों को तोड़ा। कई प्रयासों के बाद भी समाज ने न तिलक को निष्कासित किया न NB को — कोई न्याय नहीं मिला।",
+    },
+    images: [{ src: "/images/18_01_20___Tilak_refusing_direction_of_Samaj.jpg" }],
   }
 ];

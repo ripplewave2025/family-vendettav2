@@ -85,47 +85,94 @@ Nb claims that he saw Tilak Pissing in water with his own eyes and throwing the 
 
  Signature Involves: Bikash, India, Dilip, Dipesn, uma, Ruben, Bandhana, Parnita,Anjita,Santam, Bunu, Sangila, Nisha, Anjana, Nisha,Arpana,Rajan,Pranay.
 
-25.
+25. 
 
 28-01-2023_Samaj_letter_to_Police.jpeg
 
 says that on 28-01-2023 samaj tried to mediate the vendetta between NB and Tilak but they failed and they're asking police to intervene in this.
 
-26
+26. 
 
 Letter_with_no_date_to_samaj.jpeg
 
-It explains how NB's grandfather took loan for the land and he didn't pay but NB has paid and he said he also has receipt of paid loan. And it explains the history about Gangabahadur Chettri and Balaram Chettri had tried to mediate and divided the land which was agreed and Tilak was told to go to the designated area he agreed and then refused later. And keep harassing NB and it seems an appeal to get justice.
+It explains how NB's grandfather took loan for the land and he didn't pay but NB has paid and he said he also has receipt of paid loan. And it explains the history about Gangabahadur Chettri and Balaram Chettri had tried to mediate and divided the land which was agreed in 1986 and Tilak was told to go to the designated area he agreed and then refused later. And keep harassing NB and it seems an appeal to get justice.
 
-27
+27. 
 
 09-07-2023
 
 On Saturday
 
-28
+28. 
 
 letter_confirmation_of_1986_meeting.jpeg
 
 The letters tells with the signature of Balaram Chettri and Ganga Bahadur saying that this was sorted in 1986 and said that tilak had agreed to go to the designated place. which he has refused until now.
 
-29
+29. 
 
 23-04-2025_electricity_and_water_cut.jpeg
 
 The letters is to gram panchayat saying that Tilak has disconnected electricity from wire on 27th of march, and the water cut as well. And urging gram panchayat to help on this matter.
 
-30
+30. 
 
 No_date_letter.jpeg
 
 The letter is ward representative saying that Tilak and Ritesh has been threatening NB and in the meeting that he has said "I will throw you from the roof" and NB has been requesting to look into this matter.
 
-31
+31. 
 
 29-10-2025_letter_asking_for_the_resolutionOfSamaj.jpeg
 
 The letter to samaj requesting a resolution what has happened on the metting asking for what the decision was made. and asking for a written resolution or eject NB out of the meeting.
+
+Letter copy from samaj.
+-------------------------
+
+32. 27_09_2023_tilak_assualted_when_NB_was_Carrying_while_working.jpg
+
+27_09_2023_tilak_assualted_when_NB_was_Carrying_while_working2ndpage.jpg
+
+The letter was received by samaj (got the copy from samaj) which says on 22.09.2023 while NB was working actually carrying something (not spefied on the letter) at 5 pm Nb was going in his way and Tilak tried to push me and tried to hurt me and actually spit in my body and says he has been doing this for a very long time and tells about the same story that NB has done so much about the land which all of them are staying and appeals to samaj to sort this out. and the letters seem to write to the samaj and to the Gram panchayat and also to the police station.
+
+33. no_dates_letters_to_samaj_which_seems_to_have_been_compromised.jpg
+
+(letters is either 2016 or later) given the context of 2016 movement.
+
+To,
+biswakarma samaj
+Lamahatta Village,
+Darjeeling.
+
+Subject: My personal statements/opinions in response to the letter sent by you.
+
+Sir/Madam,
+
+I, Narbahadur Biswakarma, would like to inform you that I was unable to pay my monthly fees in the past year. There are many reasons for this. Firstly, my own brothers committed injustices against me. When it was just me and my wife together, my own brothers made various false accusations against us, yet the society (Samaj) did not speak a single word. At that time, I had harbored hopes of rescue/help from my society.
+
+In past years, I had been paying my fees properly, because I was a Founder Member from the time of this society's establishment. I also used to wish for the continuous progress of my village's society. But during the 2016 Andolan (Movement), when the village people leveled various accusations, I did not understand the meaning behind the society remaining quiet. Even though there is a difference between the environment of a political party and a society, when I was labeled with things like 'anti-party' or 'anti-society' [rebel], what was the society's compulsion to remain silent? When cheap accusations like 'flag thief' were made in the village, the society didn't speak! Why? When only my wife and I were in the house and stones were thrown at our roof, even then the society took no action. Even when providing information about the incident, getting answers like "go tell your own party" has caused a decline in my faith towards my society. Therefore, I am unable to make a decision on whether to stay or not stay in my society.
+
+Regarding this matter, I request you all to have a deep discussion, deliver your decision to me, and also to please not mix the society with the political party.
+
+
+34. 
+18_01_20___Tilak_refusing_direction_of_Samaj.jpg
+
+
+
+To,
+Date: 18/01/2
+Viswakarma Society (Samaj) (Sunare Village)
+Lamahatta Village Ward No. - 16
+Darjeeling.
+
+
+I, Nar Bahadur Viswakarma, son of the late Buddhiman Viswakarma, resident of Lamahatta Village Ward No. 16, Sunare Village, being a senior member as well as a resident of the 'Viswakarma Society', want to say this to you all: My elder brother Tilak Viswakarma and I have been having an ongoing dispute over land for many years, and recently we also had a fight regarding a tree.
+
+I asked the society for help many times, but my elder brother Tilak Viswakarma did not listen to the society's words—by directly violating/ignoring them, the society has also been unable to resolve this issue. This has happened many times, and after understanding this matter, the society has neither expelled the person who refuses to listen to the society, nor have they expelled me; no justice has been done whatsoever.
+
+
 
 
 
