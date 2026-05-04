@@ -26,7 +26,7 @@ export function Timeline({ lang }: { lang: Language }) {
           <div className="relative">
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-neutral-800 -translate-x-1/2 hidden md:block" />
             <div className="space-y-12">
-              {recordsData.map((record, idx) => {
+              {[...recordsData].sort((a, b) => a.sortDate.localeCompare(b.sortDate)).map((record, idx) => {
                 const isEven = idx % 2 === 0;
                 return (
                   <motion.div
