@@ -27,6 +27,18 @@ export default function Home() {
 
   return (
     <main ref={containerRef} className="min-h-screen relative pb-32">
+
+      {/* Sticky Full Report Button */}
+      <a
+        href="/case_report.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed top-5 right-5 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-[#d4af37] text-black text-sm font-bold shadow-[0_0_20px_rgba(212,175,55,0.6)] hover:shadow-[0_0_35px_rgba(212,175,55,0.9)] hover:scale-105 transition-all duration-300"
+      >
+        <ExternalLink className="w-4 h-4" />
+        Full Report
+      </a>
+
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
         <motion.div
@@ -139,30 +151,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Full Report CTA */}
-      <section className="py-16 px-6 relative z-10">
-        <div className="max-w-4xl mx-auto">
+      {/* Full Report CTA — Bold Banner */}
+      <section className="relative z-10 mt-24 px-6 pb-24">
+        <div className="max-w-5xl mx-auto">
           <motion.a
             href="/case_report.html"
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.01 }}
-            className="flex items-center justify-between gap-6 p-8 rounded-2xl border border-[#d4af37]/30 bg-gradient-to-r from-[#1a1505] to-[#0a0a0a] hover:border-[#d4af37]/60 transition-all group cursor-pointer"
+            whileHover={{ scale: 1.015 }}
+            className="group relative flex flex-col md:flex-row items-center justify-between gap-8 p-10 md:p-14 rounded-3xl overflow-hidden cursor-pointer border border-[#d4af37]/40 hover:border-[#d4af37] transition-all duration-500"
+            style={{ background: "linear-gradient(135deg, #1a1200 0%, #0d0d0d 50%, #1a1200 100%)" }}
           >
-            <div>
-              <p className="text-xs text-[#d4af37] uppercase tracking-widest font-bold mb-2">Complete Archive</p>
-              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#d4af37] transition-colors">
+            {/* Glow effects */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-0 left-1/4 w-1/2 h-px bg-gradient-to-r from-transparent via-[#d4af37]/60 to-transparent" />
+              <div className="absolute bottom-0 left-1/4 w-1/2 h-px bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
+              <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-[#d4af37]/5 rounded-full blur-3xl group-hover:bg-[#d4af37]/10 transition-all duration-700" />
+            </div>
+
+            <div className="relative text-center md:text-left">
+              <p className="text-[#d4af37] text-xs uppercase tracking-[0.3em] font-bold mb-3 flex items-center gap-2 justify-center md:justify-start">
+                <span className="inline-block w-6 h-px bg-[#d4af37]" />
+                Complete Evidence Archive
+                <span className="inline-block w-6 h-px bg-[#d4af37]" />
+              </p>
+              <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 group-hover:text-[#d4af37] transition-colors duration-300 leading-tight">
                 Open Full Detailed Report
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed max-w-lg">
-                Filterable timeline by category · Village observations · Pattern analysis · Letter image lightbox · Printable layout
+              <p className="text-neutral-400 leading-relaxed max-w-xl">
+                34 records · Filterable by category · Letter image lightbox · Pattern analysis · Printable layout · All 3 languages
               </p>
             </div>
-            <div className="shrink-0 w-14 h-14 rounded-full bg-[#d4af37]/10 border border-[#d4af37]/30 flex items-center justify-center group-hover:bg-[#d4af37]/20 transition-colors">
-              <ExternalLink className="w-6 h-6 text-[#d4af37]" />
+
+            <div className="relative shrink-0 flex flex-col items-center gap-3">
+              <div className="w-20 h-20 rounded-full border-2 border-[#d4af37] bg-[#d4af37]/10 flex items-center justify-center group-hover:bg-[#d4af37] transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.3)] group-hover:shadow-[0_0_50px_rgba(212,175,55,0.6)]">
+                <ExternalLink className="w-8 h-8 text-[#d4af37] group-hover:text-black transition-colors duration-300" />
+              </div>
+              <span className="text-[#d4af37] text-sm font-semibold tracking-wide">View Now</span>
             </div>
           </motion.a>
         </div>
