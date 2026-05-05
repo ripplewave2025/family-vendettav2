@@ -46,6 +46,9 @@ Tilak flew when the police arrived.
 Tilak refused to mediate everytime play the cards of their children everytime. When Nb was trying to make a house, he would say where would our children play?
 Tilak is handing over his vendetta to his Son, whenever ask Ritesh will do it. he doesn't want to handle this.
 
+Tialk seems to want to keep the fight going prolonged untill he accumulates the money to build a house.
+
+Tialk has never agreed for mediation or at least try to settle things to make it clear.
 
 
 
@@ -65,4 +68,34 @@ Cross reference with people in the village.
 
 
 See the pattern.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

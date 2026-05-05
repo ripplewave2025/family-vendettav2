@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { DisclaimerFooter } from "@/components/DisclaimerFooter";
 
 export const metadata: Metadata = {
   title: "Family Vendetta | Archive Evidence",
@@ -21,6 +22,7 @@ export default function RootLayout({
         <LanguageProvider>
           <LanguageToggle />
           {children}
+          <DisclaimerFooter />
         </LanguageProvider>
       </body>
     </html>
